@@ -1,0 +1,25 @@
+{
+  "name": "party-supply-retail",
+  "version": "1.0.0",
+  "description": "Online party supply store with inventory tracker for admins",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheGrimStever/partySupplyRetail.git"
+  },
+  "author": "Steven Baca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheGrimStever/partySupplyRetail/issues"
+  },
+  "homepage": "https://github.com/TheGrimStever/partySupplyRetail#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "pg-promise": "^4.0.15"
+  }
+}

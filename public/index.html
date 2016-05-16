@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="partySupply">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- If IE use the latest rendering engine
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Specific Meta -Set the page to the width of the device and set the zoom level
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+    <title>Party Supply USA</title>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/skeleton.css"> -->
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+  </head>
+  <body>
+
+    <navbar></navbar>
+
+    <ui-view></ui-view>
+
+
+    <!-- JQuery
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="/assets/libs/jquery/jquery.js"></script>
+    <!-- AngularJS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script> -->
+    <script src="/assets/libs/angular/angular.min.js"></script>
+    <!-- Angular UI Router
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <!-- Bootstrap JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="/assets/libs/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.routes.js"></script>
+    <script src="/app/components/home/homeCtrl.js"></script>
+    <script src="/app/components/service/mainService.js"></script>
+    <script src="/app/shared/navbar/navbarDirective.js"></script>
+  </body>
+</html>

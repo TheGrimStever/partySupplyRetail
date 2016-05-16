@@ -1,0 +1,66 @@
+.navbar ul {
+  list-style-type: none;
+}
+
+/*.navbar li {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+}*/
+
+.navbar a {
+  color: #fff;
+  text-shadow: 2px 2px #ff0000;
+}
+
+#divTotal {
+  background-color: green;
+}
+
+.pad-top {
+  padding-top: 50px;
+}
+/*these were for the jumbotron that i may take out*/
+/*.jumbo-full-width {
+    padding: 0;
+    margin: 0;
+}
+.img-full-width-height {
+    max-width: 100%;
+    max-height: 100%;
+}*/
+
+/* Carousel Styling */
+
+.slide1 {
+    background-image: url('../img/birthday-cake.jpeg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.slide2 {
+    background-image: url('../img/jumbotron-bday.jpg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.slide3 {
+    background-image: url('../img/back-yard-party.jpeg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.carousel-caption-slide3 {
+    color: #F7F1F1;
+}
+.carousel-caption h1 {
+    font-size: 5.4em;
+    font-family: 'Pacifico', cursive;
+    padding-bottom: .4em;
+}
+.carousel-caption p {
+    font-size: 2em;
+}
