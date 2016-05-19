@@ -1,0 +1,36 @@
+<h2>{{category.title}}</h2>
+<div>
+    <p>
+      see all the things
+    </p>
+</div>
+
+<!-- show product cards -->
+<div class="container pad-top">
+    <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in products">
+            <a ui-sref="product({id:product.id})">
+            <div class="thumbnail">
+                <img src={{product.image}} alt="">
+                <div class="caption">
+                    <h4 class="pull-right">${{product.price}}</h4>
+                    <h4>
+                        <a ui-sref="#">{{product.title}}</a>
+                    </h4>
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                </div>
+            </div>
+          </a>
+        </div>
+    </div>
+</div>

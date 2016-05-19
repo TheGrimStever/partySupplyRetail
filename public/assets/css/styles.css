@@ -9,12 +9,12 @@
 }*/
 
 .navbar a {
-  color: #fff;
-  text-shadow: 2px 2px #ff0000;
+  color: #000;
+  /*text-shadow: 2px 2px #990a0a;*/
 }
 
 #divTotal {
-  background-color: green;
+  background-color: #0f6e1c;
 }
 
 .pad-top {

@@ -1,11 +1,26 @@
-<div>
-    <h2>product page: buy some shit</h2>
-    <ul>
-        <li>
-            <a ui-sref="cart">Cart</a>
-        </li>
-        <li>
-            <a ui-sref="product">product</a>
-        </li>
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <sidebar></sidebar>
+        </div>
+
+        <div class="col-md-9">
+            <h2>{{product.title}}</h2>
+            <br/>
+            <img src="{{product.image}}" alt="" style="max-width: 250px"/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            {{product.description}}
+            <br/>
+            <br/>
+            ${{product.price}}
+            <br/>
+            <br/>
+            <br/>
+            <button class="btn-lg" ng-click="addToCart(product.id)">Add to Cart</button>
+        </div>
+
+    </div>
 </div>

@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/TheGrimStever/partySupplyRetail#readme",
   "dependencies": {
+    "bluebird": "^3.4.0",
     "body-parser": "^1.15.1",
+    "bookshelf": "^0.9.5",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "knex": "^0.11.3",
+    "pg": "^4.5.5",
     "pg-promise": "^4.0.15"
   }
 }

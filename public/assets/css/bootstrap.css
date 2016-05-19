@@ -4395,7 +4395,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav > li > a {
     padding:15px 25px;
     font-size: 16px;
-    color: white;
+    color: black;
+    transition-property: font-size;
+    transition-duration: .15s;
+    transition-timing-function: linear;
+  }
+  .navbar-nav > li > a:hover {
+    font-size: 25px;
   }
 }
 .navbar-form {

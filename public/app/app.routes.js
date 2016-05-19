@@ -6,17 +6,35 @@ angular.module('partySupply')
     $stateProvider
       .state('home', {
         url: '/home',
+        controller: 'homeCtrl',
         templateUrl: 'app/components/home/homeView.html'
       })
 
       .state('product', {
-        url: '/product',
-        templateUrl: '/app/components/product/productView.html'
+        url: '/product/:id',
+        controller: 'productCtrl',
+        templateUrl: '/app/components/productPage/productView.html',
+        resolve: {
+            productData: function (productService, $stateParams) {
+              return productService.getProductById($stateParams.id);
+            }
+        }
       })
+
+      // .state('category', {
+      //   url: '/category/:id',
+      //
+      // })
 
       .state('cart', {
         url: '/cart',
-        templateUrl: 'app/components/cart/cartView.html'
+        controller: 'cartCtrl',
+        templateUrl: 'app/components/cart/cartView.html',
+        resolve: {
+          cart: function (cartService) {
+            return cartService.getCart();
+          }
+        }
       })
 
       .state('checkout', {
