@@ -23,6 +23,7 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "knex": "^0.11.3",
+    "mongoose": "^4.4.17",
     "pg": "^4.5.5",
     "pg-promise": "^4.0.15"
   }

@@ -1,13 +1,18 @@
 angular.module('partySupply')
-    .service('productService', function() {
+    .service('productService', function($http) {
 
         this.getTest = function() {
             return data;
         };
 
-        this.getProduct = function() {
-            return productData;
-        }
+        this.getProducts = function() {
+            return $http({
+              method: 'GET',
+              url: '/api/products'
+            }).then(function (response) {
+              return response.data;
+            })
+        };
 
         this.getProductById = function(id) {
             for (var i = 0; i < productData.length; i++) {
@@ -30,7 +35,7 @@ angular.module('partySupply')
         var productData = [{
             id: 111,
             title: 'batman',
-            price: 25,
+            price: 2365,
             description: 'Lorem Ipsum set dolor consecutor',
             image: '../assets/img/batman-filled-party-favor-box.jpg'
         }, {

@@ -1,8 +1,11 @@
 angular.module('partySupply')
   .controller('homeCtrl', function ($scope, productService) {
 
+
     $scope.getProduct = function () {
-      $scope.products = productService.getProduct();
+      productService.getProducts().then(function (response) {
+        $scope.products = response;
+      });
     }
 
     $scope.getProduct();
@@ -13,9 +16,7 @@ angular.module('partySupply')
       //   $scope.products = response;
       // })
 
-      productService.getCategoryById(id) { //Not implemented yet
-
-      }
+      // productService.getCategoryById(id); //Not implemented yet
     }
 
   //end of controller

@@ -1,5 +1,5 @@
 angular.module('partySupply')
-  .controller('productCtrl', function ($scope, productService, cartService, productData) {
+  .controller('productCtrl', function ($scope, cartService, productData) {
     //this productData comes from the Resolve in our routes
     $scope.product = productData;
 
@@ -9,5 +9,5 @@ angular.module('partySupply')
 
 
 
-
+//end of controller
   });
