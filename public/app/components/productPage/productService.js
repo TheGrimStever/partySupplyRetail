@@ -35,21 +35,24 @@ angular.module('partySupply')
         var productData = [{
             id: 111,
             title: 'batman',
-            price: 2365,
+            price: 75,
             description: 'Lorem Ipsum set dolor consecutor',
-            image: '../assets/img/batman-filled-party-favor-box.jpg'
+            image: '../assets/img/batman-filled-party-favor-box.jpg',
+            qty: 2
         }, {
             id: 222,
             title: 'spider-man',
             price: 52,
             description: 'Ut enim ad minim veniam, quis nostrud',
-            image: '../assets/img/spider-man-pinata-kit.jpg'
+            image: '../assets/img/spider-man-pinata-kit.jpg',
+            qty: 2
         }, {
             id: 333,
             title: 'Iron Man',
             price: 25,
             description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia',
-            image: '../assets/img/iron-man-kids-gloves.jpg'
+            image: '../assets/img/iron-man-kids-gloves.jpg',
+            qty: 1
         }]
 
         var categories = [

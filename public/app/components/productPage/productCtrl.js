@@ -3,8 +3,9 @@ angular.module('partySupply')
     //this productData comes from the Resolve in our routes
     $scope.product = productData;
 
-    $scope.addToCart = function (id) {
-      cartService.addToCart(id);
+    $scope.addToCart = function (product) {
+      console.log('add to cart button pressed');
+      cartService.addToCart(product);
     }
 
 

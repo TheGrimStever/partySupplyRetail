@@ -34,6 +34,8 @@ app.use(session({
 app.post('/api/products', productCtrl.Create);
 app.get('/api/products', productCtrl.Read);
 
+//user
+// app.post('/api/user/addtocart/:id', userCtrl.AddProductToCart);//etc, etc
 
 
 
