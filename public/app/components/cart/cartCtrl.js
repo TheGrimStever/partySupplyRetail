@@ -6,8 +6,6 @@ angular.module('partySupply')
         $scope.total = 0;
         var getTotal = function(cart) {
             if (cart) {
-                // $scope.total = 0;
-                console.log("getTotal method: " + cart);
                 cart.forEach(function(item) {
                         var subtotal = item.price * item.qty;
                         $scope.total += subtotal;
@@ -20,8 +18,14 @@ angular.module('partySupply')
         //when user updates Qty in cart, pass getTotal as call back.
         $scope.updateQtyAndTotal = function(qty, id) {
                 cartService.updateQty(qty, id);
-                console.log("I'm updating the CART! " + id);
                 getTotal(cart);
                 $state.reload();
             }
+
+        $scope.removeItemFromCart = function (id) {
+              cartService.removeItemFromCart(id);
+              $state.reload();
+        }
+
+  // End of Controller
     });

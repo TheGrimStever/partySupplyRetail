@@ -50,21 +50,20 @@ angular.module('partySupply')
         }
         //TODO: finish this
         this.removeItemFromCart = function (id) {
+          //Get the cart from Local Storage, and make it a JSON object.
           var cartObj = $window.localStorage.getItem('cart');
-          //can i use my helper function here?
-          cartObj.products.forEach(function (product) {
-            if (product.id === id) {
-              // product.qty = 0;
-
-            }
-          })
+          cartObj = JSON.parse(cartObj);
+          //Use Helper function to cut the target ID out of array, then store
+          //new array back into local storage
+          cartObj.products.splice(getProductInCartById(cartObj.products, id), 1);
+          $window.localStorage.setItem('cart', $window.JSON.stringify(cartObj));
         }
 
         //Helper Function
         function getProductInCartById(cartArr, id) {
             for (var i = 0; i < cartArr.length; i++) {
               if (cartArr[i].id === id) {
-                return cartArr[i];
+                return i;
               }
             }
             return false;
