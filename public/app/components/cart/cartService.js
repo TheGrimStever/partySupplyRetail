@@ -1,5 +1,5 @@
 angular.module('partySupply')
-    .service('cartService', function($http, $window) {
+    .service('cartService', function($http, $window, $state) {
 
         this.addToCart = function(product) {
             //TODO: check for dupes
@@ -14,7 +14,6 @@ angular.module('partySupply')
                 //cart exists, check for dupes and if unique product, add
                 cartObj = $window.localStorage.getItem('cart');
                 cartObj = JSON.parse(cartObj);
-                console.log(cartObj.products);
                 //use the helper function to find dupes
                 if (!getProductInCartById(cartObj.products, product.id)) {
                   //push item to product array if item not found
@@ -25,26 +24,44 @@ angular.module('partySupply')
                 }
 
             }
-
-            console.log('in the Cart Service, making carts');
         }
 
 
         this.getCart = function() {
             if (!$window.localStorage.getItem('cart')) {
-              alert("nothing in cart");
+              return ;
             } else {
               var cartObj = $window.localStorage.getItem('cart');
               cartObj = JSON.parse(cartObj);
-              console.log(cartObj.products);
               return cartObj.products;
             }
 
         }
+
+        this.updateQty = function (qty, id) {
+          var cartObj = $window.localStorage.getItem('cart');
+          cartObj = JSON.parse(cartObj);
+          cartObj.products.forEach(function (product) {
+            if (product.id === id) {
+              product.qty = qty;
+              $window.localStorage.setItem('cart', $window.JSON.stringify(cartObj));
+            }
+          })
+        }
+        //TODO: finish this
+        this.removeItemFromCart = function (id) {
+          var cartObj = $window.localStorage.getItem('cart');
+          //can i use my helper function here?
+          cartObj.products.forEach(function (product) {
+            if (product.id === id) {
+              // product.qty = 0;
+
+            }
+          })
+        }
+
         //Helper Function
         function getProductInCartById(cartArr, id) {
-          console.log(cartArr);
-          console.log(id);
             for (var i = 0; i < cartArr.length; i++) {
               if (cartArr[i].id === id) {
                 return cartArr[i];

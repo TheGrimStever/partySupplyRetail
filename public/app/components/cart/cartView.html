@@ -12,8 +12,13 @@
               <div class="panel-body">
                 <img src="{{item.image}}" alt="" style="max-width: 125px" />
                 Product: {{item.description}}
-                <input type="number" ng-model="qtyInput" name="qty" value="{{item.qty}}">
-                <button ng-click="someFunc(qtyInput)">Update Cart</button>
+
+              <form>
+                Quantity: {{item.qty}}
+                <input type="number" ng-model="qtyInput" name="qty" min="1" placeholder="change quantity">
+                <button ng-click="updateQtyAndTotal(qtyInput, item.id)">Update Cart</button>
+                <button type="button" name="remove">Remove</button>
+              </form>
               </div>
             </div>
 

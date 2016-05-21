@@ -1,27 +1,27 @@
 angular.module('partySupply')
-  .controller('cartCtrl', function ($scope, cartService, productService, cart) {
+    .controller('cartCtrl', function($scope, cartService, productService, cart, $state) {
 
-    $scope.cart = cart;
+        $scope.cart = cart;
 
-    //function to add all totals on page load
-    // $scope.getTotal = function (cart) {
-    //   //clear out $scope.total
-    //   $scope.total = 0;
-    //   //run logic to tally all the prices
-    // }
+        $scope.total = 0;
+        var getTotal = function(cart) {
+            if (cart) {
+                // $scope.total = 0;
+                console.log("getTotal method: " + cart);
+                cart.forEach(function(item) {
+                        var subtotal = item.price * item.qty;
+                        $scope.total += subtotal;
+                        //not included:  SHipping and Tax
+                })
+            }
+        }
+        getTotal(cart);
 
-    $scope.total = 0;
-    var getTotal = function(cart) {
-      console.log(cart);
-      cart.forEach(function(item) {
-        var subtotal = item.price * item.qty;
-        $scope.total += subtotal;
-        //not included:  SHipping and Tax
-      })
-    }
-    getTotal(cart);
-
-    //when user updates Qty in cart, pass getTotal as call back.
-    // cartService.upatetqyincart;
-    // getTotal();
-  });
+        //when user updates Qty in cart, pass getTotal as call back.
+        $scope.updateQtyAndTotal = function(qty, id) {
+                cartService.updateQty(qty, id);
+                console.log("I'm updating the CART! " + id);
+                getTotal(cart);
+                $state.reload();
+            }
+    });
