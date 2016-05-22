@@ -7,63 +7,26 @@ angular.module('partySupply')
 
         this.getProducts = function() {
             return $http({
-              method: 'GET',
-              url: '/api/products'
-            }).then(function (response) {
-              return response.data;
+                method: 'GET',
+                url: '/api/products'
+            }).then(function(response) {
+                return response.data;
             })
         };
 
         this.getProductById = function(id) {
-            for (var i = 0; i < productData.length; i++) {
-                if (productData[i].id === parseInt(id)) {
-                    return productData[i];
-                }
-            }
+            return $http({
+                method: 'GET',
+                url: '/api/products/' + id
+            }).then(function(response) {
+                return response.data;
+            })
         }
 
-        this.getCategory = function(id){
-          // return get('/api/category/' + id).then(function (response) {return response.data;})
-          return categories;
+        this.getCategory = function(id) {
+            return categories;
         }
 
 
-
-
-        var data = "I'm a string, making sure this works!";
-
-        var productData = [{
-            id: 111,
-            title: 'batman',
-            price: 75,
-            description: 'Lorem Ipsum set dolor consecutor',
-            image: '../assets/img/batman-filled-party-favor-box.jpg',
-            qty: 2
-        }, {
-            id: 222,
-            title: 'spider-man',
-            price: 52,
-            description: 'Ut enim ad minim veniam, quis nostrud',
-            image: '../assets/img/spider-man-pinata-kit.jpg',
-            qty: 2
-        }, {
-            id: 333,
-            title: 'Iron Man',
-            price: 25,
-            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia',
-            image: '../assets/img/iron-man-kids-gloves.jpg',
-            qty: 1
-        }]
-
-        var categories = [
-          {
-            id: 1,
-            title: 'birthdays'
-          },
-          {
-            id: 2,
-            title: 'party favors'
-          }
-        ]
-
+//End of Service
     });

@@ -23,6 +23,16 @@ module.exports = {
     })
   },
 
+  ReadById: function (req, res, next) {
+    Product.findById(req.params.id, req.body, function (err, response) {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+        res.status(200).json(response);
+      }
+    })
+  },
+
   Update: function (req, res, next) {
 
   },

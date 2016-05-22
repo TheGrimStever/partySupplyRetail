@@ -33,6 +33,7 @@ app.use(session({
 // app.get('/api/products/:id', testController.show);
 app.post('/api/products', productCtrl.Create);
 app.get('/api/products', productCtrl.Read);
+app.get('/api/products/:id', productCtrl.ReadById);
 
 //user
 // app.post('/api/user/addtocart/:id', userCtrl.AddProductToCart);//etc, etc

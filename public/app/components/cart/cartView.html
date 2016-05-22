@@ -2,9 +2,7 @@
     <div class="row">
 
         <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8" ng-repeat="item in cart track by $index">
-            <!-- this part should prob be a directive... -->
 
-            <!-- only need to test that cart service works -->
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h3 class="panel-heading">{{item.title}}</h3>
@@ -16,32 +14,12 @@
               <form>
                 Quantity: {{item.qty}}
                 <input type="number" ng-model="qtyInput" name="qty" min="1" placeholder="change quantity">
-                <button type="button" ng-click="updateQtyAndTotal(qtyInput, item.id)">Update Cart</button>
-                <button type="button" ng-click="removeItemFromCart(item.id)" name="remove">Remove</button>
+                <button type="button" ng-click="updateQtyAndTotal(qtyInput, item._id)">Update Cart</button>
+                <button type="button" ng-click="removeItemFromCart(item._id)" name="remove">Remove</button>
               </form>
+              {{item._id}}
               </div>
             </div>
-
-
-
-          <!-- <a ui-sref="product({id:item.id})">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{item.title}}</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="thumbnail">
-                        <img src="{{item.image}}" alt="" />
-                    </div>
-                    <div>
-                      {{item.description}}
-                      <br/>
-                      ${{item.price}}
-                    </div>
-                </div>
-            </div>
-          </a> -->
-            <!-- ...end of my above note -->
         </div>
 
         <div class="col-xs-5 col-md-4 col-sm-4 col-lg-4">

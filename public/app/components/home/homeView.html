@@ -1,11 +1,4 @@
-<!-- <div class="container-fluid jumbo-full-width">
-  <div class="jumbotron" style="padding: 0">
-    <div class="img-jumbo">
-        <img class="img-full-width-height" src="assets/img/birthday-cake.jpeg" alt="birthday-candles-on-cake" />
-    </div>
 
-  </div>
-</div> -->
 <section ng-controller="homeCtrl">
     <!-- Carousel -->
     <!-- Surround everything with a div with the class carousel slide -->
@@ -75,7 +68,7 @@
     <div class="container pad-top">
         <div class="row">
             <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in products">
-                <a ui-sref="product({id:product.id})">
+                <a ui-sref="product({id:product._id})">
                 <div class="thumbnail">
                     <img src={{product.image}} alt="">
                     <div class="caption">

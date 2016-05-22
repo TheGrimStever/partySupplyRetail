@@ -2,7 +2,6 @@ angular.module('partySupply')
     .service('cartService', function($http, $window, $state) {
 
         this.addToCart = function(product) {
-            //TODO: check for dupes
             var cartObj;
             if (!$window.localStorage.getItem('cart')) { //check if cart exists already
                 //cart doesn't exist, add the first item
@@ -15,7 +14,7 @@ angular.module('partySupply')
                 cartObj = $window.localStorage.getItem('cart');
                 cartObj = JSON.parse(cartObj);
                 //use the helper function to find dupes
-                if (!getProductInCartById(cartObj.products, product.id)) {
+                if (!getProductInCartById(cartObj.products, product._id)) {
                   //push item to product array if item not found
                   cartObj['products'].push(product);
                   $window.localStorage.setItem('cart', $window.JSON.stringify(cartObj));
@@ -42,13 +41,13 @@ angular.module('partySupply')
           var cartObj = $window.localStorage.getItem('cart');
           cartObj = JSON.parse(cartObj);
           cartObj.products.forEach(function (product) {
-            if (product.id === id) {
+            if (product._id === id) {
               product.qty = qty;
               $window.localStorage.setItem('cart', $window.JSON.stringify(cartObj));
             }
           })
         }
-        //TODO: finish this
+
         this.removeItemFromCart = function (id) {
           //Get the cart from Local Storage, and make it a JSON object.
           var cartObj = $window.localStorage.getItem('cart');
@@ -59,16 +58,26 @@ angular.module('partySupply')
           $window.localStorage.setItem('cart', $window.JSON.stringify(cartObj));
         }
 
+        this.getTotal = function(cart) {
+            if (cart) {
+                var total = 0;
+                cart.forEach(function(item) {
+                        var subtotal = item.price * item.qty;
+                        total += subtotal;
+                        //not included:  SHipping and Tax
+                })
+                return total;
+            }
+        }
+
         //Helper Function
         function getProductInCartById(cartArr, id) {
             for (var i = 0; i < cartArr.length; i++) {
-              if (cartArr[i].id === id) {
+              if (cartArr[i]._id === id) {
                 return i;
               }
             }
             return false;
         }
-
-        var cart = [];
-
+//End of Service
     });

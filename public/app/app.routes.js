@@ -38,7 +38,16 @@ angular.module('partySupply')
       })
 
       .state('checkout', {
-        url: '/checkout',
+        url: '/checkout/',
+        controller: 'checkoutCtrl',
         templateUrl: 'app/components/checkout/checkoutView.html'
+        // resolve: {
+        //   total: function (cartCtrl, $stateParams) {
+        //     return $stateParams.total;
+        //   },
+        //   cart: function (cartService) {
+        //     return cartService.getCart();
+        //   }
+        // }
       })
   })
