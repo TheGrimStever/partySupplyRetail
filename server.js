@@ -11,9 +11,8 @@ var config      = require('./config.json');
 // var db = require('./db.js')
 
 var mongoose    = require('mongoose');
-
 var productCtrl = require('./controllers/productCtrl.js');
-
+var categoryCtrl = require('./controllers/categoryCtrl.js');
 
 
 var app = express();
@@ -35,8 +34,10 @@ app.post('/api/products', productCtrl.Create);
 app.get('/api/products', productCtrl.Read);
 app.get('/api/products/:id', productCtrl.ReadById);
 
-//user
-// app.post('/api/user/addtocart/:id', userCtrl.AddProductToCart);//etc, etc
+//Category
+// app.post('/api/category/:name', categoryCtrl.Create);
+// app.get('/api/category', categoryCtrl.Read);
+// app.get('/api/category/birthday', categoryCtrl.ReadBirthday);
 
 
 

@@ -20,10 +20,21 @@ angular.module('partySupply')
             }
         }
       })
+      
+      // .state('birthday', {
+      //   url: '/birthday',
+      //   templateUrl: '/app/compnents/category/birthdayView.html',
+      //   controller: 'categoryCtrl'
+      // });
 
       // .state('category', {
       //   url: '/category/:id',
-      //
+      //   controller: 'productCtrl',
+      //   resolve: {
+      //       productData: function (productService, $stateParams) {
+      //         return productService.getPageById($stateParams.id);
+      //       }
+      //   }
       // })
 
       .state('cart', {
@@ -41,13 +52,5 @@ angular.module('partySupply')
         url: '/checkout/',
         controller: 'checkoutCtrl',
         templateUrl: 'app/components/checkout/checkoutView.html'
-        // resolve: {
-        //   total: function (cartCtrl, $stateParams) {
-        //     return $stateParams.total;
-        //   },
-        //   cart: function (cartService) {
-        //     return cartService.getCart();
-        //   }
-        // }
       })
   })

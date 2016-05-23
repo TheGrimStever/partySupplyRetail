@@ -1581,6 +1581,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  font-family: Antic;
 }
 @media (min-width: 768px) {
   .container {
@@ -5728,8 +5729,8 @@ button.list-group-item-danger.active:focus {
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: #71BBC7; /* original color: #337ab7;*/
+  border-color: #71BBC7;    /* original color: #337ab7;*/
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #337ab7;

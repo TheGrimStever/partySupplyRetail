@@ -22,9 +22,14 @@ angular.module('partySupply')
                 return response.data;
             })
         }
-
-        this.getCategory = function(id) {
-            return categories;
+/////category products
+        this.getBirthdayProducts = function() {
+          return $http({
+              method: 'GET',
+              url: '/api/products/birthday'
+          }).then(function(response) {
+              return response.data;
+          })
         }
 
 

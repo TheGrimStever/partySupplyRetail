@@ -12,12 +12,11 @@
                 Product: {{item.description}}
 
               <form>
-                Quantity: {{item.qty}}
-                <input type="number" ng-model="qtyInput" name="qty" min="1" placeholder="change quantity">
+                <p>Quantity: {{item.qty}}</p>
+                <input type="number" ng-model="qtyInput" name="qty" min="1" placeholder="qty" style="width:40px">
                 <button type="button" ng-click="updateQtyAndTotal(qtyInput, item._id)">Update Cart</button>
                 <button type="button" ng-click="removeItemFromCart(item._id)" name="remove">Remove</button>
               </form>
-              {{item._id}}
               </div>
             </div>
         </div>
